@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Inscrição recebida | AeroTD</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .thanks { min-height: 100svh; display: grid; place-items: center; padding: 120px 0 80px; }
+  .thanks__check { width: 96px; height: 96px; margin: 0 auto 30px; display: grid; place-items: center; border-radius: 50%; background: var(--navy); box-shadow: 0 0 0 14px rgba(127,178,236,.2); animation: popIn .7s var(--ease); }
+  .thanks__check svg { width: 46px; stroke: #fff; stroke-width: 4; fill: none; stroke-dasharray: 60; stroke-dashoffset: 60; animation: draw .6s .4s var(--ease) forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .thanks .final__links { margin-top: 32px; }
+  .thanks .demo-note { display: inline-block; margin: 0 0 24px; }
+</style>
+</head>
+<body>
+<section class="final thanks">
+  <div class="final__bg" aria-hidden="true"><img src="assets/img/aeroporto-noite.jpg" width="1080" height="1340" alt=""></div>
+  <div class="wrap final__in">
+    <p class="demo-note" id="demo" hidden>Modo demonstração: nada foi enviado ou gravado.</p>
+    <div class="thanks__check" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 25l9 9 19-20"/></svg></div>
+    <h1 class="h2 h2--light h2--xl"><strong>Inscrição recebida.</strong> Agora é com a gente.</h1>
+    <p class="lead lead--light">Em breve a gente te chama no WhatsApp. Enquanto isso, veja o passo a passo e o edital.</p>
+    <div class="final__links">
+      <a class="btn btn--red btn--lg" href="#" data-video>Ver o passo a passo</a>
+      <a class="btn btn--ghost btn--lg" href="#" data-edital>Ler o edital</a>
+    </div>
+    <p class="apoio apoio--light">A vaga só é garantida com aprovação no processo seletivo e matrícula concluída.</p>
+  </div>
+</section>
+<script src="assets/config.js"></script>
+<script>
+  (() => {
+    const C = window.LP_CONFIG || {};
+    if (new URLSearchParams(location.search).has('demo') || C.FORM_MODE === 'demo') document.getElementById('demo').hidden = false;
+    const link = (sel, url) => document.querySelectorAll(sel).forEach((a) => {
+      if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
+      else a.addEventListener('click', (e) => { e.preventDefault(); if (C.SHOW_PENDENCIAS) alert('Pendência: link ainda não informado.'); });
+    });
+    link('[data-video]', C.VIDEO_URL);
+    link('[data-edital]', C.EDITAL_URL);
+  })();
+</script>
+</body>
+</html>
