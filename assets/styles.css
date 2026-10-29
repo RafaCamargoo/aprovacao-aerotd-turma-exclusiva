@@ -381,14 +381,14 @@ main { overflow-x: clip; }
 .video-frame__yt p { display: none; }
 .video-frame__yt .pend-tag { position: absolute; left: 12px; right: 12px; bottom: 12px; margin: 0; justify-content: center; text-align: center; }
 
-/* Hero mobile: vídeo em cima, texto e CTA embaixo, tudo na primeira tela */
+/* Hero mobile: vídeo de fundo com véu azul; respiro no topo, texto e CTA embaixo na primeira tela */
 @media (max-width: 720px) {
-  .hero { display: block; min-height: 0; padding: var(--header-h) 0 34px; }
-  .hero__bg { position: relative; inset: auto; aspect-ratio: 16 / 10; overflow: hidden; }
-  .hero__bg img, .hero__video { object-position: 50% 45%; }
-  .hero__bg::after { background: linear-gradient(0deg, var(--navy-deep) 0%, rgba(0,30,64,0) 32%); }
+  .hero { display: flex; align-items: flex-end; min-height: 100svh; padding: calc(var(--header-h) + 26svh) 0 30px; }
+  .hero__bg { position: absolute; inset: 0; }
+  .hero__bg img, .hero__video { object-position: 58% 30%; }
+  .hero__bg::after { background: linear-gradient(180deg, rgba(0,38,79,.38) 0%, rgba(0,38,79,.5) 28%, rgba(0,30,64,.86) 50%, rgba(0,30,64,.95) 100%); }
   .hero__grid { display: none; }
-  .hero__in { margin-top: -6px; }
+  .hero__in { width: calc(100% - 40px); }
   .hero .tag { font-size: 10.5px; padding: 6px 11px; }
   .hero__title { font-size: clamp(25px, 7vw, 34px); margin-top: 12px; }
   .hero__title-sub { font-size: 16px; margin-top: 8px; }
@@ -400,7 +400,7 @@ main { overflow-x: clip; }
   .video-frame__play { width: 60px; height: 60px; font-size: 20px; }
 }
 @media (max-width: 720px) and (max-height: 720px) {
-  .hero__bg { aspect-ratio: 2 / 1; }
+  .hero { padding-top: calc(var(--header-h) + 18svh); }
   .hero__text { display: none; }
   .hero__title { font-size: clamp(23px, 6.6vw, 30px); }
   .hero__title-sub { font-size: 15px; }
