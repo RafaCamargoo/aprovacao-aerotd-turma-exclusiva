@@ -26,10 +26,9 @@
     <p class="demo-note" id="demo" hidden>Modo demonstração: nada foi enviado ou gravado.</p>
     <div class="thanks__check" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 25l9 9 19-20"/></svg></div>
     <h1 class="h2 h2--light h2--xl"><strong>Inscrição recebida.</strong> Agora é com a gente.</h1>
-    <p class="lead lead--light">Em breve a gente te chama no WhatsApp. Enquanto isso, veja o passo a passo e o edital.</p>
+    <p class="lead lead--light">Em breve a gente te chama no WhatsApp. Enquanto isso, veja o passo a passo do processo seletivo.</p>
     <div class="final__links">
-      <a class="btn btn--red btn--lg" href="#" data-video>Ver o passo a passo</a>
-      <a class="btn btn--ghost btn--lg" href="#" data-edital>Ler o edital</a>
+      <a class="btn btn--red btn--lg" href="index.html#processo">Ver o passo a passo</a>
     </div>
     <p class="apoio apoio--light">A vaga só é garantida com aprovação no processo seletivo e matrícula concluída.</p>
   </div>
@@ -39,12 +38,6 @@
   (() => {
     const C = window.LP_CONFIG || {};
     if (new URLSearchParams(location.search).has('demo') || C.FORM_MODE === 'demo') document.getElementById('demo').hidden = false;
-    const link = (sel, url) => document.querySelectorAll(sel).forEach((a) => {
-      if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
-      else a.addEventListener('click', (e) => { e.preventDefault(); if (C.SHOW_PENDENCIAS) alert('Pendência: link ainda não informado.'); });
-    });
-    link('[data-video]', C.VIDEO_URL);
-    link('[data-edital]', C.EDITAL_URL);
   })();
 </script>
 </body>

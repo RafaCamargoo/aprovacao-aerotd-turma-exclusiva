@@ -6,19 +6,10 @@
 
   if (!CFG.SHOW_PENDENCIAS) document.documentElement.classList.add('no-pend');
 
-  // Links configuráveis (edital, vídeo, WhatsApp)
-  const setLink = (sel, url) => $$(sel).forEach((a) => {
-    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
-    else a.addEventListener('click', (e) => { e.preventDefault(); if (CFG.SHOW_PENDENCIAS) alert('Pendência: link ainda não informado.'); });
-  });
-  setLink('[data-edital]', CFG.EDITAL_URL);
-  setLink('[data-video]', CFG.VIDEO_URL);
-  setLink('[data-whatsapp]', CFG.WHATSAPP_URL);
-
-  // Vídeo do YouTube: carrega o player só no clique
+  // Vídeo do YouTube: toca dentro da página, carrega o player só no clique
   $$('[data-yt]').forEach((btn) => btn.addEventListener('click', () => {
     const f = document.createElement('iframe');
-    f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0`;
+    f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
     f.title = 'Passo a passo do processo seletivo';
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
