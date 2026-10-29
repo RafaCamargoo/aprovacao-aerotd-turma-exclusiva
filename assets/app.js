@@ -30,7 +30,6 @@
   const progress = $('.header__progress');
   const lightSecs = $$('[data-header="light"]');
   const hero = $('.hero');
-  const sticky = $('.sticky-cta');
   const stepsLine = $('.steps__line');
   const steps = $('.steps');
   const mercadoImg = $('.mercado__bg img');
@@ -47,7 +46,6 @@
     header.classList.toggle('is-light', inLight);
     header.classList.toggle('is-navy', !inLight && heroBottom < probe);
 
-    if (sticky) sticky.classList.toggle('is-on', $('.final').getBoundingClientRect().top > innerHeight * .6);
 
     if (steps && stepsLine) {
       const r = steps.getBoundingClientRect();

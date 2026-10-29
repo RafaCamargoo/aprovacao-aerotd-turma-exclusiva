@@ -6,5 +6,5 @@ window.LP_CONFIG = {
   WHATSAPP_URL: '',           // pendência 14: número de atendimento
   EDITAL_URL: '',             // pendência 4: edital do processo seletivo
   VIDEO_URL: 'https://youtu.be/RGdgHIC6L2E', // pendência 4: vídeo da turma Helipark, confirmar com o Juan se vale para a GOL
-  SHOW_PENDENCIAS: true       // caixas de pendência visíveis no preview
+  SHOW_PENDENCIAS: false      // caixas de pendência visíveis no preview
 };
